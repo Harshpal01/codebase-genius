@@ -257,7 +257,7 @@ st.markdown("""
 
 # --- CONSTANTS ---
 BASE_URL = "http://localhost:8000"
-CODE_GENIUS_ENDPOINT = f"{BASE_URL}/walker/generate_docs"
+CODE_GENIUS_ENDPOINT = f"{BASE_URL}/walker/CodeGeniusSupervisor"
 GET_DOCUMENTATION_ENDPOINT = f"{BASE_URL}/walker/get_documentation"
 LIST_REPOSITORIES_ENDPOINT = f"{BASE_URL}/walker/list_repositories"
 
