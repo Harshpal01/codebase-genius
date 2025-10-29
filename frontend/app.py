@@ -325,7 +325,7 @@ st.markdown("""
 st.markdown("<br>", unsafe_allow_html=True)
 
 # --- TABS ---
-tab1, tab2, tab3 = st.tabs(["🚀 Generate Documentation", "📖 View Documentation", "📂 Repository History"])
+tab1, tab2, tab3 = st.tabs(["🎯  Generate Documentation", "📖 View Documentation", "📂 Repository History"])
 
 # ========================
 #   GENERATE DOCUMENTATION
@@ -345,7 +345,7 @@ with tab1:
     
     with col2:
         st.markdown("<br>", unsafe_allow_html=True)
-        generate_button = st.button("🎯 Generate Docs", type="primary")
+        generate_button = st.button("Generate Docs", type="primary")
     
     if generate_button:
         if not github_url:
@@ -369,14 +369,12 @@ with tab1:
                             
                             st.markdown(f"""
                             <div class="success-box">
-                                <h3>✅ Documentation Generated Successfully!</h3>
+                                <h3>Documentation Generated Successfully!</h3>
                                 <p><strong>Repository:</strong> {result.get('repository')}</p>
                                 <p><strong>Documentation Path:</strong> {result.get('documentation_path')}</p>
                                 <p><strong>Message:</strong> {result.get('message')}</p>
                             </div>
                             """, unsafe_allow_html=True)
-                            
-                            st.balloons()
                             
                             # Add to history
                             st.session_state.generated_docs.append({
