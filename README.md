@@ -2,7 +2,7 @@
 
 **An AI-Powered Multi-Agent System for Automated Code Documentation**
 
-Codebase Genius is an intelligent, autonomous system that generates comprehensive, high-quality documentation for any software repository. Built with JacLang and powered by GPT-4, it analyzes codebases, understands relationships, and produces professional markdown documentation with architecture diagrams.
+Codebase Genius is an intelligent, autonomous system that generates comprehensive, high-quality documentation for any software repository. Built with JacLang and powered by Google's Gemini AI, it analyzes codebases, understands relationships, and produces professional markdown documentation with architecture diagrams.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
@@ -58,19 +58,19 @@ Codebase Genius uses a multi-agent pipeline with four specialized agents:
 
 - Python 3.8 or higher
 - Git installed and accessible from command line
-- OpenAI API key (or Gemini API key)
+- Gemini API key
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
-   cd codebase_genius
+   git clone https://github.com/Harshpal01/codebase-genius.git
+   cd codebase-genius
    ```
 
 2. **Set up the backend**
    ```bash
-   cd BE
+   cd backend
    python -m venv venv
    
    # On Windows
@@ -85,7 +85,7 @@ Codebase Genius uses a multi-agent pipeline with four specialized agents:
 3. **Configure environment variables**
    ```bash
    cp .env.example .env
-   # Edit .env and add your OPENAI_API_KEY
+   # Edit .env and add your Gemini_API_KEY
    ```
 
 4. **Start the backend server**
@@ -99,7 +99,7 @@ Codebase Genius uses a multi-agent pipeline with four specialized agents:
    
    Open a new terminal:
    ```bash
-   cd FE
+   cd frontend
    pip install -r requirements.txt
    streamlit run app.py
    ```
@@ -303,11 +303,7 @@ Handles data processing operations.
 
 ---
 
-## 🧪 Testing
-
-### Test with Sample Repositories
-
-Try these repositories to test the system:
+## 🧪 Example Repositories to Try
 
 1. **Small Repository**
    ```bash
@@ -336,8 +332,8 @@ Try these repositories to test the system:
 **Issue**: Git clone fails
 - **Solution**: Ensure Git is installed and in PATH
 
-**Issue**: OpenAI API errors
-- **Solution**: Verify API key in `.env` file and check credits
+**Issue**: Gemini API errors
+- **Solution**: Verify your Gemini API key in `.env` file and check API quota
 
 **Issue**: Import errors
 - **Solution**: Reinstall dependencies: `pip install -r requirements.txt`
@@ -352,7 +348,7 @@ Try these repositories to test the system:
 - Only supports public GitHub repositories
 - Large repositories (>1000 files) may take significant time
 - Documentation quality depends on code structure and README
-- Rate limits apply based on OpenAI API tier
+- Rate limits apply based on Google Gemini API tier
 - Currently supports Python and Jac languages only
 
 ---
@@ -398,22 +394,74 @@ This project is part of an academic assignment. Contributions, suggestions, and 
 
 ---
 
-## 📝 License
+## � Dependencies & Licensing
 
-This project is created for educational purposes as part of an academic assignment.
+### Backend Dependencies
+
+This project uses the following Python packages:
+
+| Package | Version | Purpose | License |
+|---------|---------|---------|----------|
+| **jaclang** | latest | Core JacLang programming language runtime | MIT |
+| **jac-cloud** | latest | Cloud deployment framework for Jac applications | MIT |
+| **byllm** | latest | Multi-model LLM integration framework by Jaseci Labs | Apache 2.0 |
+| **python-dotenv** | latest | Environment variable management from .env files | BSD-3-Clause |
+| **gitpython** | latest | Git repository cloning and manipulation | BSD-3-Clause |
+
+### Frontend Dependencies
+
+| Package | Version | Purpose | License |
+|---------|---------|---------|----------|
+| **streamlit** | latest | Web-based UI framework for data applications | Apache 2.0 |
+| **requests** | latest | HTTP library for API communication | Apache 2.0 |
+
+### External APIs
+
+**Google Gemini AI API**
+- **Purpose**: Powers the AI-driven code analysis and documentation generation
+- **Terms**: [Google Cloud Terms of Service](https://cloud.google.com/terms)
+- **API Key**: Required (obtain from [Google AI Studio](https://makersuite.google.com/app/apikey))
+- **Pricing**: Free tier available with rate limits
+
+### Installation
+
+All dependencies are specified in:
+- Backend: `backend/requirements.txt`
+- Frontend: `frontend/requirements.txt`
+
+Install with:
+```bash
+pip install -r requirements.txt
+```
+
+### Licensing Considerations
+
+- All dependencies use permissive open-source licenses (MIT, Apache 2.0, BSD-3-Clause)
+- This project itself is created for educational purposes
+- The Google Gemini API requires acceptance of Google's terms of service
+- Generated documentation inherits the license of the analyzed repository
 
 ---
 
-## 👥 Authors
+## �📝 License
 
-- **Your Name** - Initial work
+This project is created for educational purposes as part of an academic assignment.
+
+**MIT License** - Feel free to use, modify, and distribute with attribution.
+
+---
+
+## 👥 Author
+
+- **Dominic Kipkorir** - Initial work and development
 
 ---
 
 ## 🙏 Acknowledgments
 
 - **Jaseci Labs** for the byLLM framework and reference implementation
-- **OpenAI** for GPT-4 API
+- **OpenAI** for the GPT-4 API
+- **Google** for the Gemini AI API
 - **JacLang Community** for the innovative programming language
 - **Streamlit** for the beautiful UI framework
 
@@ -423,7 +471,7 @@ This project is created for educational purposes as part of an academic assignme
 
 For questions, issues, or suggestions:
 - Open an issue on GitHub
-- Email: your.email@example.com
+- Email: pkoordominic@gmail.com
 
 ---
 
